@@ -1,2 +1,4 @@
-package org.example.exceptions;public class CustomException {
+package org.example.exceptions;
+
+public class CustomException {
 }

@@ -1,2 +1,4 @@
-package org.example.utils;public class FileIOUtils {
+package org.example.utils;
+
+public class FileIOUtils {
 }

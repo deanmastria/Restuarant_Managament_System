@@ -1,2 +1,4 @@
-package org.example.controllers;public class menuController {
+package org.example.controllers;
+
+public class MenuController {
 }

@@ -1,2 +1,4 @@
-package org.example.models;public class MenuItem {
+package org.example.models;
+
+public class MenuItem {
 }

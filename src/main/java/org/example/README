@@ -1,0 +1,68 @@
+RestaurantManagementSystem/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── org/
+│   │   │       └── example/
+│   │   │           ├── App.java                    # Main application class
+│   │   │           ├── controllers/                # JavaFX controllers for handling UI actions
+│   │   │           │   ├── LoginController.java
+│   │   │           │   ├── MenuController.java
+│   │   │           │   ├── OrderController.java
+│   │   │           │   ├── TableController.java
+│   │   │           │   ├── InventoryController.java
+│   │   │           │   └── ReportController.java
+│   │   │           ├── models/                     # Data models for various entities
+│   │   │           │   ├── User.java
+│   │   │           │   ├── Manager.java
+│   │   │           │   ├── Staff.java
+│   │   │           │   ├── MenuItem.java
+│   │   │           │   ├── Order.java
+│   │   │           │   ├── Table.java
+│   │   │           │   ├── Inventory.java
+│   │   │           │   └── Report.java
+│   │   │           ├── services/                   # Business logic and services
+│   │   │           │   ├── AuthService.java        # Authentication and role-based access control
+│   │   │           │   ├── MenuService.java        # Menu management logic
+│   │   │           │   ├── OrderService.java       # Order processing logic
+│   │   │           │   ├── TableService.java       # Table management logic
+│   │   │           │   ├── InventoryService.java   # Inventory tracking logic
+│   │   │           │   └── ReportService.java      # Sales report generation
+│   │   │           ├── utils/                      # Utility classes
+│   │   │           │   ├── FileIOUtils.java        # For file input/output operations
+│   │   │           │   └── HashUtils.java          # For password hashing
+│   │   │           └── exceptions/                 # Custom exceptions
+│   │   │               └── CustomException.java
+│   │   └── resources/
+│       ├── fxml/                                  # FXML files for JavaFX UI
+│       │   ├── login.fxml
+│       │   ├── menu.fxml
+│       │   ├── order.fxml
+│       │   ├── table.fxml
+│       │   ├── inventory.fxml
+│       │   └── report.fxml
+│       ├── css/                                   # Stylesheets for UI
+│       │   └── style.css
+│       └── images/                                # Images for the application
+│           └── logo.png
+│
+├── test/                                           # Unit tests for the application
+│   └── java/
+│       └── org/
+│           └── example/
+│               ├── AuthServiceTest.java
+│               ├── MenuServiceTest.java
+│               ├── OrderServiceTest.java
+│               ├── TableServiceTest.java
+│               ├── InventoryServiceTest.java
+│               └── ReportServiceTest.java
+│
+├── logs/                                           # Log files for the application
+│
+├── data/                                           # Data files (e.g., menu items, orders, etc.)
+│
+├── lib/                                            # External libraries (if any)
+│
+├── README.md                                       # Project documentation
+└── pom.xml                                         # Maven configuration file (if using Maven)

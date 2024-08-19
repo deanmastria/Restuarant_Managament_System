@@ -1,2 +1,4 @@
-package org.example.models;public class Inventory {
+package org.example.models;
+
+public class Inventory {
 }

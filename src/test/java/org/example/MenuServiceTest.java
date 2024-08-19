@@ -1,2 +1,4 @@
-package org.example;public class MenuServiceTest {
+package org.example;
+
+public class MenuServiceTest {
 }

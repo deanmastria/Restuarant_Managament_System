@@ -1,2 +1,4 @@
-package org.example;public class ReportServiceTest {
+package org.example;
+
+public class ReportServiceTest {
 }

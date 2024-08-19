@@ -1,2 +1,4 @@
-package org.example.models;public class Table {
+package org.example.models;
+
+public class Table {
 }

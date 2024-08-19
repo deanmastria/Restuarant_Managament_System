@@ -1,2 +1,4 @@
-package org.example.models;public class Report {
+package org.example.models;
+
+public class Report {
 }

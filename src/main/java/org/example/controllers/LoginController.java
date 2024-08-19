@@ -1,2 +1,4 @@
-package org.example.controllers;public class LoginController {
+package org.example.controllers;
+
+public class LoginController {
 }

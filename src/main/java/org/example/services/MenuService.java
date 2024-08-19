@@ -1,2 +1,4 @@
-package org.example.services;public class MenuService {
+package org.example.services;
+
+public class MenuService {
 }

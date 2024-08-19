@@ -1,2 +1,4 @@
-package org.example.models;public class Staff {
+package org.example.models;
+
+public class Staff {
 }

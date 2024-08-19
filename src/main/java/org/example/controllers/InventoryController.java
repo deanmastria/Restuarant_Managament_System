@@ -1,2 +1,4 @@
-package org.example.controllers;public class InventoryController {
+package org.example.controllers;
+
+public class InventoryController {
 }

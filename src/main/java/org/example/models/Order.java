@@ -1,2 +1,4 @@
-package org.example.models;public class Order {
+package org.example.models;
+
+public class Order {
 }

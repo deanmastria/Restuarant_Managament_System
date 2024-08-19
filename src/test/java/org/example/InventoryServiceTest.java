@@ -1,2 +1,4 @@
-package org.example;public class InventoryServiceTest {
+package org.example;
+
+public class InventoryServiceTest {
 }

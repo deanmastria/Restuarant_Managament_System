@@ -1,2 +1,4 @@
-package org.example.controllers;public class TableController {
+package org.example.controllers;
+
+public class TableController {
 }
