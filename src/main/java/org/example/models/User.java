@@ -1,17 +1,18 @@
 package org.example.models;
 
 public class User {
-    private String username;
-    private String passwordHash;    // Store the hashed password
-    private String role;        //"Manager" or "staff"
+    private final String username;
+    private final String passwordHash;  // Store the hashed password
+    private final Role role;            // "Manager" or "Staff"
 
-    public User(String username, String passwordHash, String role) {
+    // Constructor
+    public User(String username, String passwordHash, Role role) {
         this.username = username;
         this.passwordHash = passwordHash;
         this.role = role;
     }
 
-    // Getters & Setters
+    // Getters
     public String getUsername() {
         return username;
     }
@@ -20,7 +21,16 @@ public class User {
         return passwordHash;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
+    }
+
+    // Override toString for better logging and debugging
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", role=" + role +
+                '}';
     }
 }

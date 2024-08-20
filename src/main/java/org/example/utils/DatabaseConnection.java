@@ -11,9 +11,12 @@ public class DatabaseConnection {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(URL);
-            System.out.println("Connected to SQLite database.");
+            if (conn != null) {
+                System.out.println("Connected to SQLite database.");
+            }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.err.println("Failed to connect to SQLite database: " + e.getMessage());
+            e.printStackTrace();
         }
         return conn;
     }

@@ -9,19 +9,19 @@
             prefHeight="400.0" prefWidth="600.0">
     <children>
         <VBox spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0">
-            <Label text="Order Management"/>
+            <Label text="Order Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 
             <!-- List of Orders -->
             <ListView fx:id="orderListView" prefHeight="200.0" prefWidth="580.0"/>
 
             <!-- Status Dropdown -->
+            <Label text="Select Status:"/>
             <ComboBox fx:id="statusComboBox" promptText="Select Status" prefWidth="200.0"/>
 
-            <!-- Buttons -->
-            <HBox spacing="10">
-                <Button text="Update Status" onMouseClicked="#handleUpdateOrderStatus"/>
-                <Button text="Delete Order" onMouseClicked="#handleDeleteOrder"/>
-            </HBox>
+            <!-- Buttons for actions -->
+            <Button text="Update Status" onMouseClicked="#handleUpdateOrderStatus"/>
+            <Button text="Delete Order" onMouseClicked="#handleDeleteOrder"/>
         </VBox>
     </children>
 </AnchorPane>
+
