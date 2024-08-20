@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="database created. test code to start">
+    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="MenuItems">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/TestMenuItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/MenuItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/MenuItemDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MenuServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MenuServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,30 +48,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.TestDatabase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthServiceTest.testRegisterAndLoginUser.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TestDatabase.executor": "Run",
+    "Application.TestMenuItemDAO.executor": "Run",
+    "JUnit.AuthServiceTest.executor": "Run",
+    "JUnit.AuthServiceTest.testRegisterAndLoginUser.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
-  <component name="RunManager" selected="Application.TestDatabase">
+}]]></component>
+  <component name="RunManager" selected="Application.TestMenuItemDAO">
     <configuration name="TestDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.TestDatabase" />
+      <module name="Restuarant_Managament_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMenuItemDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.TestMenuItemDAO" />
       <module name="Restuarant_Managament_System" />
       <extension name="coverage">
         <pattern>
@@ -113,6 +130,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestMenuItemDAO" />
         <item itemvalue="Application.TestDatabase" />
         <item itemvalue="JUnit.AuthServiceTest.testRegisterAndLoginUser" />
         <item itemvalue="JUnit.AuthServiceTest" />
@@ -136,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724093477401</updated>
       <workItem from="1724093478628" duration="6301000" />
-      <workItem from="1724156821326" duration="452000" />
+      <workItem from="1724156821326" duration="1056000" />
     </task>
     <task id="LOCAL-00001" summary="database created. test code to start">
       <option name="closed" value="true" />
@@ -146,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724099967325</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MenuItems">
+      <option name="closed" value="true" />
+      <created>1724157290407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724157290407</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +191,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="database created. test code to start" />
-    <option name="LAST_COMMIT_MESSAGE" value="database created. test code to start" />
+    <MESSAGE value="MenuItems" />
+    <option name="LAST_COMMIT_MESSAGE" value="MenuItems" />
   </component>
 </project>
