@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="most up to date">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="commit to pull table changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,37 +42,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "Application.TestDatabase.executor": "Run",
-    "Application.TestMenuItemDAO.executor": "Run",
-    "JUnit.AuthServiceTest.executor": "Run",
-    "JUnit.AuthServiceTest.testRegisterAndLoginUser.executor": "Run",
-    "JUnit.MenuServiceTest.executor": "Run",
-    "JUnit.MenuServiceTest.testAddIceCreamMenuItem.executor": "Run",
-    "JUnit.MenuServiceTest.testAddMenuItem.executor": "Run",
-    "JUnit.OrderServiceTest.executor": "Run",
-    "JUnit.OrderServiceTest.testUpdateOrderStatus.executor": "Debug",
-    "Maven.RestaurantManagementSystem [clean].executor": "Run",
-    "Maven.RestaurantManagementSystem [compile].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/deanm/IdeaProjects/Project_IO",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestDatabase.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestMenuItemDAO.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthServiceTest.testRegisterAndLoginUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MenuServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MenuServiceTest.testAddIceCreamMenuItem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MenuServiceTest.testAddMenuItem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderServiceTest.testUpdateOrderStatus.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.RestaurantManagementSystem [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RestaurantManagementSystem [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/deanm/IdeaProjects/Project_IO&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
@@ -187,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724093477401</updated>
       <workItem from="1724093478628" duration="6301000" />
-      <workItem from="1724156821326" duration="20491000" />
+      <workItem from="1724156821326" duration="21475000" />
     </task>
     <task id="LOCAL-00001" summary="database created. test code to start">
       <option name="closed" value="true" />
@@ -245,7 +243,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724181445580</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="most up to date">
+      <option name="closed" value="true" />
+      <created>1724184025918</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724184025918</updated>
+    </task>
+    <task id="LOCAL-00009" summary="commit to pull table changes">
+      <option name="closed" value="true" />
+      <created>1724184063408</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724184063408</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +284,7 @@
     <MESSAGE value="carries code integrated, debugged, gui operational" />
     <MESSAGE value="update before major changes" />
     <MESSAGE value="most up to date" />
-    <option name="LAST_COMMIT_MESSAGE" value="most up to date" />
+    <MESSAGE value="commit to pull table changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit to pull table changes" />
   </component>
 </project>
