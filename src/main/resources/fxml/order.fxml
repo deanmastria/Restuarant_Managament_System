@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.Order"
+            fx:controller="org.example.controllers.OrderController"
             prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0">
+            <Label text="Order Management"/>
 
+            <!-- List of Orders -->
+            <ListView fx:id="orderListView" prefHeight="200.0" prefWidth="580.0"/>
+
+            <!-- Status Dropdown -->
+            <ComboBox fx:id="statusComboBox" promptText="Select Status" prefWidth="200.0"/>
+
+            <!-- Buttons -->
+            <HBox spacing="10">
+                <Button text="Update Status" onMouseClicked="#handleUpdateOrderStatus"/>
+                <Button text="Delete Order" onMouseClicked="#handleDeleteOrder"/>
+            </HBox>
+        </VBox>
+    </children>
 </AnchorPane>

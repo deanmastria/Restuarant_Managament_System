@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.Menu"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controllers.MenuController"
+      prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label text="Menu Management"/>
+        <TextField fx:id="nameField" promptText="Item Name"/>
+        <TextArea fx:id="descriptionField" promptText="Description"/>
+        <TextField fx:id="preparationTimeField" promptText="Preparation Time (minutes)"/>
+        <TextField fx:id="priceField" promptText="Price"/>
+        <TextField fx:id="ingredientsField" promptText="Ingredients (comma-separated)"/>
+        <Button text="Add Item" onMouseClicked="#handleAddMenuItem"/>
+        <Button text="Update Item" onMouseClicked="#handleUpdateMenuItem"/>
+        <Button text="Delete Item" onMouseClicked="#handleDeleteMenuItem"/>
+        <ListView fx:id="menuListView" onMouseClicked="#handleMenuItemSelection"/>
+    </children>
+</VBox>

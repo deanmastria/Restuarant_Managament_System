@@ -6,6 +6,8 @@ import org.example.services.MenuService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,11 +19,32 @@ public class MenuServiceTest {
     @BeforeEach
     public void setUp() {
         menuService = new MenuService();
+        clearDatabase();  // Clear the database before each test
     }
 
+    // Method to clear the MenuItems table
+    private void clearDatabase() {
+        String sql = "DELETE FROM MenuItems";  // SQL query to clear the table
+
+        try (Connection conn = org.example.utils.DatabaseConnection.connect();
+             Statement stmt = conn.createStatement()) {
+
+            stmt.executeUpdate(sql);
+            System.out.println("Database has been cleared.");
+        } catch (Exception e) {
+            System.out.println("Failed to clear the database: " + e.getMessage());
+        }
+    }
+
+
     @Test
-    public void testAddMenuItem() {
-        MenuItem item = new MenuItem("Vanilla Ice Cream", "Classic vanilla flavor", 5, 3.99, Arrays.asList("Milk", "Sugar", "Vanilla"));
+    public void testAddIceCreamMenuItem() {
+        MenuItem item = new MenuItem(
+                "Vanilla Ice Cream",
+                "Classic vanilla flavor",
+                5,
+                3.99,
+                Arrays.asList("Vanilla Flavor", "Sprinkles"));  // Ice cream: flavor + toppings
         menuService.addMenuItem(item);
 
         List<MenuItem> items = menuService.getAllMenuItems();
@@ -30,20 +53,43 @@ public class MenuServiceTest {
     }
 
     @Test
+    public void testAddMilkshakeMenuItem() {
+        MenuItem item = new MenuItem(
+                "Chocolate Milkshake",
+                "Delicious chocolate milkshake",
+                7,
+                5.99,
+                Arrays.asList("Chocolate Flavor", "Whipped Cream", "Milk"));  // Milkshake: ice cream flavor + toppings + milk
+        menuService.addMenuItem(item);
+
+        List<MenuItem> items = menuService.getAllMenuItems();
+        assertEquals(1, items.size(), "The number of menu items should be 1 after adding one item.");
+        assertEquals("Chocolate Milkshake", items.get(0).getName(), "The added item's name should be 'Chocolate Milkshake'.");
+    }
+
+    @Test
     public void testGetAllMenuItems() {
-        menuService.addMenuItem(new MenuItem("Vanilla Ice Cream", "Classic vanilla flavor", 5, 3.99, Arrays.asList("Milk", "Sugar", "Vanilla")));
-        menuService.addMenuItem(new MenuItem("Chocolate Ice Cream", "Rich chocolate flavor", 5, 4.99, Arrays.asList("Milk", "Sugar", "Cocoa")));
+        menuService.addMenuItem(new MenuItem(
+                "Vanilla Ice Cream", "Classic vanilla flavor", 5, 3.99,
+                Arrays.asList("Vanilla Flavor", "Sprinkles")));  // Ice cream
+        menuService.addMenuItem(new MenuItem(
+                "Strawberry Milkshake", "Refreshing strawberry milkshake", 7, 5.99,
+                Arrays.asList("Strawberry Flavor", "Whipped Cream", "Milk")));  // Milkshake
 
         List<MenuItem> items = menuService.getAllMenuItems();
         assertEquals(2, items.size(), "The number of menu items should be 2 after adding two items.");
     }
 
     @Test
-    public void testUpdateMenuItem() {
-        MenuItem item = new MenuItem("Strawberry Ice Cream", "Fresh strawberry flavor", 5, 4.49, Arrays.asList("Milk", "Sugar", "Strawberries"));
+    public void testUpdateIceCreamMenuItem() {
+        MenuItem item = new MenuItem(
+                "Strawberry Ice Cream", "Fresh strawberry flavor", 5, 4.49,
+                Arrays.asList("Strawberry Flavor", "Sprinkles"));  // Ice cream
         menuService.addMenuItem(item);
 
-        MenuItem updatedItem = new MenuItem("Strawberry Ice Cream", "Updated description", 6, 4.99, Arrays.asList("Milk", "Sugar", "Strawberries"));
+        MenuItem updatedItem = new MenuItem(
+                "Strawberry Ice Cream", "Updated description", 6, 4.99,
+                Arrays.asList("Strawberry Flavor", "Sprinkles"));  // Updated ice cream
         menuService.updateMenuItem("Strawberry Ice Cream", updatedItem);
 
         MenuItem foundItem = menuService.findMenuItemByName("Strawberry Ice Cream");
@@ -53,7 +99,9 @@ public class MenuServiceTest {
 
     @Test
     public void testDeleteMenuItem() {
-        MenuItem item = new MenuItem("Mango Ice Cream", "Tropical mango flavor", 5, 4.49, Arrays.asList("Milk", "Sugar", "Mango"));
+        MenuItem item = new MenuItem(
+                "Mango Ice Cream", "Tropical mango flavor", 5, 4.49,
+                Arrays.asList("Mango Flavor", "Sprinkles"));  // Ice cream
         menuService.addMenuItem(item);
 
         menuService.deleteMenuItem("Mango Ice Cream");
@@ -64,11 +112,13 @@ public class MenuServiceTest {
 
     @Test
     public void testFindMenuItemByName() {
-        MenuItem item = new MenuItem("Pistachio Ice Cream", "Nutty pistachio flavor", 5, 4.99, Arrays.asList("Milk", "Sugar", "Pistachio"));
+        MenuItem item = new MenuItem(
+                "Pistachio Milkshake", "Nutty pistachio milkshake", 7, 5.99,
+                Arrays.asList("Pistachio Flavor", "Whipped Cream", "Milk"));  // Milkshake
         menuService.addMenuItem(item);
 
-        MenuItem foundItem = menuService.findMenuItemByName("Pistachio Ice Cream");
+        MenuItem foundItem = menuService.findMenuItemByName("Pistachio Milkshake");
         assertNotNull(foundItem, "The item should be found in the menu.");
-        assertEquals("Pistachio Ice Cream", foundItem.getName(), "The found item's name should be 'Pistachio Ice Cream'.");
+        assertEquals("Pistachio Milkshake", foundItem.getName(), "The found item's name should be 'Pistachio Milkshake'.");
     }
 }
