@@ -15,7 +15,7 @@ public class MenuService {
 
     // Method to add a new menu item
     public void addMenuItem(MenuItem menuItem) {
-        // You can add any business logic here if needed
+
         menuItemDAO.addMenuItem(menuItem);
     }
 
