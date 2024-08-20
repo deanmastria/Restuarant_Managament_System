@@ -14,9 +14,12 @@ public class MenuService {
     }
 
     // Method to add a new menu item
-    public void addMenuItem(MenuItem menuItem) {
-        // You can add any business logic here if needed
-        menuItemDAO.addMenuItem(menuItem);
+    public boolean addMenuItem(MenuItem menuItem) {
+        if (menuItem == null || menuItem.getName() == null || menuItem.getName().isEmpty()) {
+            throw new IllegalArgumentException("Menu item and its name must not be null or empty.");
+        }
+        // Additional business logic can be added here if needed
+        return menuItemDAO.addMenuItem(menuItem);
     }
 
     // Method to get all menu items
@@ -25,19 +28,29 @@ public class MenuService {
     }
 
     // Method to update an existing menu item
-    public void updateMenuItem(String itemName, MenuItem updatedMenuItem) {
-        // You can add any validation or business logic here if needed
-        menuItemDAO.updateMenuItem(itemName, updatedMenuItem);
+    public boolean updateMenuItem(String itemName, MenuItem updatedMenuItem) {
+        if (itemName == null || itemName.isEmpty() || updatedMenuItem == null) {
+            throw new IllegalArgumentException("Item name and updated menu item must not be null or empty.");
+        }
+        // Additional validation or business logic can be added here if needed
+        return menuItemDAO.updateMenuItem(itemName, updatedMenuItem);
     }
 
     // Method to delete a menu item by name
-    public void deleteMenuItem(String itemName) {
-        // You can add any business logic here if needed
-        menuItemDAO.deleteMenuItem(itemName);
+    public boolean deleteMenuItem(String itemName) {
+        if (itemName == null || itemName.isEmpty()) {
+            throw new IllegalArgumentException("Item name must not be null or empty.");
+        }
+        // Additional business logic can be added here if needed
+        return menuItemDAO.deleteMenuItem(itemName);
     }
 
     // Method to find a menu item by name
     public MenuItem findMenuItemByName(String itemName) {
+        if (itemName == null || itemName.isEmpty()) {
+            throw new IllegalArgumentException("Item name must not be null or empty.");
+        }
         return menuItemDAO.findMenuItemByName(itemName);
     }
 }
+

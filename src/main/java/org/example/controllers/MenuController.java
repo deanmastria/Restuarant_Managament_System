@@ -1,6 +1,5 @@
 package org.example.controllers;
 
-
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -48,24 +47,27 @@ public class MenuController {
 
     @FXML
     public void handleAddMenuItem(MouseEvent event) {
-        String name = nameField.getText();
-        String description = descriptionField.getText();
-        int preparationTime = Integer.parseInt(preparationTimeField.getText());
-        double price = Double.parseDouble(priceField.getText());
-        List<String> ingredients = Arrays.asList(ingredientsField.getText().split(","));
+        if (validateInputs()) {
+            String name = nameField.getText();
+            String description = descriptionField.getText();
+            int preparationTime = Integer.parseInt(preparationTimeField.getText());
+            double price = Double.parseDouble(priceField.getText());
+            List<String> ingredients = Arrays.asList(ingredientsField.getText().split(","));
 
-        MenuItem menuItem = new MenuItem(name, description, preparationTime, price, ingredients);
-        menuService.addMenuItem(menuItem);
+            MenuItem menuItem = new MenuItem(name, description, preparationTime, price, ingredients);
+            menuService.addMenuItem(menuItem);
 
-        menuItems.add(menuItem);
-        clearFields();
+            menuItems.add(menuItem);
+            clearFields();
+            showAlert("Success", "Menu item added successfully.");
+        }
     }
 
     @FXML
     public void handleUpdateMenuItem(MouseEvent event) {
         MenuItem selectedItem = menuListView.getSelectionModel().getSelectedItem();
 
-        if (selectedItem != null) {
+        if (selectedItem != null && validateInputs()) {
             String name = nameField.getText();
             String description = descriptionField.getText();
             int preparationTime = Integer.parseInt(preparationTimeField.getText());
@@ -77,6 +79,7 @@ public class MenuController {
 
             loadMenuItems();  // Reload the menu items to reflect the update
             clearFields();
+            showAlert("Success", "Menu item updated successfully.");
         } else {
             showAlert("No item selected", "Please select an item to update.");
         }
@@ -89,6 +92,8 @@ public class MenuController {
         if (selectedItem != null) {
             menuService.deleteMenuItem(selectedItem.getName());
             menuItems.remove(selectedItem);
+            clearFields();
+            showAlert("Success", "Menu item deleted successfully.");
         } else {
             showAlert("No item selected", "Please select an item to delete.");
         }
@@ -121,5 +126,30 @@ public class MenuController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private boolean validateInputs() {
+        if (nameField.getText().isEmpty() || descriptionField.getText().isEmpty() ||
+                preparationTimeField.getText().isEmpty() || priceField.getText().isEmpty() ||
+                ingredientsField.getText().isEmpty()) {
+            showAlert("Invalid Input", "All fields must be filled out.");
+            return false;
+        }
+
+        try {
+            Integer.parseInt(preparationTimeField.getText());
+        } catch (NumberFormatException e) {
+            showAlert("Invalid Input", "Preparation time must be a valid integer.");
+            return false;
+        }
+
+        try {
+            Double.parseDouble(priceField.getText());
+        } catch (NumberFormatException e) {
+            showAlert("Invalid Input", "Price must be a valid number.");
+            return false;
+        }
+
+        return true;
     }
 }

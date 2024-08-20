@@ -44,14 +44,26 @@ public class LoginController {
     public void handleLoginAction() {
         String username = usernameField.getText();
         String password = passwordField.getText();
+
+        // Check if username or password fields are empty
+        if (username.isEmpty() || password.isEmpty()) {
+            loginStatusLabel.setText("Please enter both username and password.");
+            return;
+        }
+
         boolean isAuthenticated = authService.login(username, password);  // Use the 'login' method from AuthService
 
         if (isAuthenticated) {
-            Role userRole = Role.valueOf(authService.getRole(username));  // Convert the role string to Role enum
-            loginStatusLabel.setText("Login successful! Role: " + userRole);
-            configurePermissions(userRole);  // Configure permissions based on the user's role
+            Role userRole = authService.getRole(username);  // Get the Role enum directly
+
+            if (userRole != null) {
+                loginStatusLabel.setText("Login successful! Role: " + userRole);
+                configurePermissions(userRole);  // Configure permissions based on the user's role
+            } else {
+                loginStatusLabel.setText("Error: Role not found for user.");
+            }
         } else {
-            loginStatusLabel.setText("Login failed. Please try again.");
+            loginStatusLabel.setText("Login failed. Incorrect username or password.");
         }
     }
 
@@ -72,5 +84,11 @@ public class LoginController {
             reportButton.setDisable(false);    // Accessible for managers
         }
     }
+
+    // Method to clean up resources (if needed)
+    public void cleanup() {
+        authService = null;  // If additional cleanup is necessary
+    }
 }
+
 

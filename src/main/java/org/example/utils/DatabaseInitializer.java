@@ -3,6 +3,7 @@ package org.example.utils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class DatabaseInitializer {
     public static void initialize() {
@@ -66,14 +67,33 @@ public class DatabaseInitializer {
             stmt.execute(sql);
             System.out.println("Sales table created successfully.");
 
-            // Seed Tables and Inventory data
-            seedTablesData(conn);
-            seedInventoryData(conn);
+            // Seed Tables and Inventory data if not already seeded
+            if (!isTableDataSeeded(conn, "Tables")) {
+                seedTablesData(conn);
+            }
+            if (!isTableDataSeeded(conn, "Inventory")) {
+                seedInventoryData(conn);
+            }
 
             System.out.println("Database has been initialized.");
         } catch (Exception e) {
+            System.err.println("Error during database initialization: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    // Check if table data has already been seeded
+    private static boolean isTableDataSeeded(Connection conn, String tableName) {
+        String sql = "SELECT COUNT(*) FROM " + tableName;
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            if (rs.next()) {
+                return rs.getInt(1) > 0;  // If count > 0, data is already seeded
+            }
+        } catch (Exception e) {
+            System.err.println("Error checking data in " + tableName + ": " + e.getMessage());
+        }
+        return false;
     }
 
     // Method to seed the Tables table with fixed data
@@ -83,10 +103,10 @@ public class DatabaseInitializer {
         int[] tableQuantities = {4, 4, 3};  // Booth: 4 tables, Round Table: 4 tables, Outside Table: 3 tables
 
         try {
-            for (int i = 0; i < tableTypes.length; i++) {
-                for (int j = 0; j < tableQuantities[i]; j++) {
-                    String sql = "INSERT INTO Tables(size, status) VALUES(?, ?)";
-                    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            String sql = "INSERT INTO Tables(size, status) VALUES(?, ?)";
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                for (int i = 0; i < tableTypes.length; i++) {
+                    for (int j = 0; j < tableQuantities[i]; j++) {
                         pstmt.setInt(1, tableSizes[i]);
                         pstmt.setString(2, "Available");  // Default status to 'Available'
                         pstmt.executeUpdate();
@@ -95,7 +115,7 @@ public class DatabaseInitializer {
             }
             System.out.println("Tables data has been seeded.");
         } catch (Exception e) {
-            System.out.println("Failed to seed tables data: " + e.getMessage());
+            System.err.println("Failed to seed tables data: " + e.getMessage());
         }
     }
 
@@ -120,65 +140,55 @@ public class DatabaseInitializer {
         String milk = "Milk";  // For milkshakes
 
         try {
-            for (String flavor : iceCreamFlavors) {
-                String sql = "INSERT INTO Inventory(ingredientName, quantity) VALUES(?, ?)";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            String sql = "INSERT INTO Inventory(ingredientName, quantity) VALUES(?, ?)";
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                // Insert ice cream flavors
+                for (String flavor : iceCreamFlavors) {
                     pstmt.setString(1, flavor + " Ice Cream");
                     pstmt.setInt(2, 100);  // Set initial quantity
                     pstmt.executeUpdate();
                 }
-            }
 
-            for (String topping : toppings) {
-                String sql = "INSERT INTO Inventory(ingredientName, quantity) VALUES(?, ?)";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                // Insert toppings
+                for (String topping : toppings) {
                     pstmt.setString(1, topping);
                     pstmt.setInt(2, 15);  // Set initial quantity
                     pstmt.executeUpdate();
                 }
-            }
 
-            for (String sorbet : sorbetFlavors) {
-                String sql = "INSERT INTO Inventory(ingredientName, quantity) VALUES(?, ?)";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                // Insert sorbet flavors
+                for (String sorbet : sorbetFlavors) {
                     pstmt.setString(1, sorbet + " Sorbet");
                     pstmt.setInt(2, 70);  // Set initial quantity
                     pstmt.executeUpdate();
                 }
-            }
 
-            for (String lemonade : lemonadeFlavors) {
-                String sql = "INSERT INTO Inventory(ingredientName, quantity) VALUES(?, ?)";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                // Insert lemonade flavors
+                for (String lemonade : lemonadeFlavors) {
                     pstmt.setString(1, lemonade);
                     pstmt.setInt(2, 50);  // Set initial quantity
                     pstmt.executeUpdate();
                 }
-            }
 
-            for (String soda : sodaFlavors) {
-                String sql = "INSERT INTO Inventory(ingredientName, quantity) VALUES(?, ?)";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                // Insert soda flavors
+                for (String soda : sodaFlavors) {
                     pstmt.setString(1, soda);
                     pstmt.setInt(2, 50);  // Set initial quantity
                     pstmt.executeUpdate();
                 }
-            }
 
-            // Add milk for milkshakes
-            String sql = "INSERT INTO Inventory(ingredientName, quantity) VALUES(?, ?)";
-            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                // Insert milk for milkshakes
                 pstmt.setString(1, milk);
                 pstmt.setInt(2, 200);  // Set initial quantity
                 pstmt.executeUpdate();
             }
-
             System.out.println("Inventory data has been seeded.");
         } catch (Exception e) {
-            System.out.println("Failed to seed inventory data: " + e.getMessage());
+            System.err.println("Failed to seed inventory data: " + e.getMessage());
         }
     }
 }
+
 
 
 

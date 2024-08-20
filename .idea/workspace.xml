@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="carries code integrated, debugged, gui operational">
+    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="update before major changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/MenuItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/MenuItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Staff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/StaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/StaffService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AuthServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/inventory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/order.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/report.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/report.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +204,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724093477401</updated>
       <workItem from="1724093478628" duration="6301000" />
-      <workItem from="1724156821326" duration="16007000" />
+      <workItem from="1724156821326" duration="18861000" />
     </task>
     <task id="LOCAL-00001" summary="database created. test code to start">
       <option name="closed" value="true" />
@@ -237,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724168559327</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update before major changes">
+      <option name="closed" value="true" />
+      <created>1724177882075</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724177882075</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +277,7 @@
     <MESSAGE value="menu dao | service | test service | test menuitem" />
     <MESSAGE value="commit for fork" />
     <MESSAGE value="carries code integrated, debugged, gui operational" />
-    <option name="LAST_COMMIT_MESSAGE" value="carries code integrated, debugged, gui operational" />
+    <MESSAGE value="update before major changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="update before major changes" />
   </component>
 </project>

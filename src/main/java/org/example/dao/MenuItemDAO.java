@@ -7,11 +7,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MenuItemDAO {
 
+    private static final Logger logger = Logger.getLogger(MenuItemDAO.class.getName());
+
     // Method to add a new menu item
-    public void addMenuItem(MenuItem menuItem) {
+    public boolean addMenuItem(MenuItem menuItem) {
         String sql = "INSERT INTO MenuItems(name, description, preparationTime, price, ingredients) VALUES(?, ?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.connect();
@@ -24,9 +28,11 @@ public class MenuItemDAO {
             pstmt.setString(5, String.join(",", menuItem.getIngredients()));  // Convert ingredients list to a comma-separated string
 
             pstmt.executeUpdate();
-            System.out.println("Menu item added successfully.");
+            logger.log(Level.INFO, "Menu item added successfully.");
+            return true;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.log(Level.SEVERE, "Error adding menu item: " + e.getMessage(), e);
+            return false;
         }
     }
 
@@ -51,14 +57,14 @@ public class MenuItemDAO {
                 menuItems.add(menuItem);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.log(Level.SEVERE, "Error retrieving menu items: " + e.getMessage(), e);
         }
 
         return menuItems;
     }
 
     // Method to update an existing menu item by name
-    public void updateMenuItem(String itemName, MenuItem updatedMenuItem) {
+    public boolean updateMenuItem(String itemName, MenuItem updatedMenuItem) {
         String sql = "UPDATE MenuItems SET description = ?, preparationTime = ?, price = ?, ingredients = ? WHERE name = ?";
 
         try (Connection conn = DatabaseConnection.connect();
@@ -70,25 +76,40 @@ public class MenuItemDAO {
             pstmt.setString(4, String.join(",", updatedMenuItem.getIngredients()));
             pstmt.setString(5, itemName);
 
-            pstmt.executeUpdate();
-            System.out.println("Menu item updated successfully.");
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                logger.log(Level.INFO, "Menu item updated successfully.");
+                return true;
+            } else {
+                logger.log(Level.WARNING, "Menu item not found for update.");
+                return false;
+            }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.log(Level.SEVERE, "Error updating menu item: " + e.getMessage(), e);
+            return false;
         }
     }
 
     // Method to delete a menu item by name
-    public void deleteMenuItem(String itemName) {
+    public boolean deleteMenuItem(String itemName) {
         String sql = "DELETE FROM MenuItems WHERE name = ?";
 
         try (Connection conn = DatabaseConnection.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, itemName);
-            pstmt.executeUpdate();
-            System.out.println("Menu item deleted successfully.");
+            int rowsAffected = pstmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                logger.log(Level.INFO, "Menu item deleted successfully.");
+                return true;
+            } else {
+                logger.log(Level.WARNING, "Menu item not found for deletion.");
+                return false;
+            }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.log(Level.SEVERE, "Error deleting menu item: " + e.getMessage(), e);
+            return false;
         }
     }
 
@@ -113,7 +134,7 @@ public class MenuItemDAO {
                 );
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.log(Level.SEVERE, "Error finding menu item: " + e.getMessage(), e);
         }
 
         return menuItem;
