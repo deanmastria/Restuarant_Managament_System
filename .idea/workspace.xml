@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="menu dao | service | test service | test menuitem">
+    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="carries code integrated, debugged, gui operational">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/order.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MenuServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MenuServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/OrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AuthServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "Application.TestDatabase.executor": "Run",
     "Application.TestMenuItemDAO.executor": "Run",
     "JUnit.AuthServiceTest.executor": "Run",
@@ -65,9 +64,12 @@
     "JUnit.MenuServiceTest.testAddMenuItem.executor": "Run",
     "JUnit.OrderServiceTest.executor": "Run",
     "JUnit.OrderServiceTest.testUpdateOrderStatus.executor": "Debug",
+    "Maven.RestaurantManagementSystem [clean].executor": "Run",
+    "Maven.RestaurantManagementSystem [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/deanm/IdeaProjects/Project_IO",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,10 +83,12 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.OrderServiceTest">
-    <configuration name="TestDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.TestDatabase" />
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="Restuarant_Managament_System" />
+      <option name="PROGRAM_PARAMETERS" value="--module-path /path/to/javafx-sdk/lib --add-modules=javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\deanm\.m2\repository\org\openjfx\javafx-controls\19.0.2;C:\Users\deanm\.m2\repository\org\openjfx\javafx-fxml\19.0.2;C:\Users\deanm\.m2\repository\org\openjfx\javafx-base\19.0.2;C:\Users\deanm\.m2\repository\org\openjfx\javafx-graphics\19.0.2 --add-modules javafx.controls,javafx.fxml " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -157,13 +161,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.MenuServiceTest" />
+      <item itemvalue="JUnit.MenuServiceTest.testAddIceCreamMenuItem" />
+      <item itemvalue="JUnit.OrderServiceTest" />
+      <item itemvalue="JUnit.OrderServiceTest.testUpdateOrderStatus" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.OrderServiceTest" />
         <item itemvalue="JUnit.OrderServiceTest.testUpdateOrderStatus" />
         <item itemvalue="JUnit.MenuServiceTest" />
         <item itemvalue="JUnit.MenuServiceTest.testAddIceCreamMenuItem" />
-        <item itemvalue="Application.TestDatabase" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +195,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724093477401</updated>
       <workItem from="1724093478628" duration="6301000" />
-      <workItem from="1724156821326" duration="6240000" />
+      <workItem from="1724156821326" duration="16007000" />
     </task>
     <task id="LOCAL-00001" summary="database created. test code to start">
       <option name="closed" value="true" />
@@ -210,7 +221,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724157937716</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit for fork">
+      <option name="closed" value="true" />
+      <created>1724164245918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724164245918</updated>
+    </task>
+    <task id="LOCAL-00005" summary="carries code integrated, debugged, gui operational">
+      <option name="closed" value="true" />
+      <created>1724168559327</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724168559327</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +258,8 @@
     <MESSAGE value="database created. test code to start" />
     <MESSAGE value="MenuItems" />
     <MESSAGE value="menu dao | service | test service | test menuitem" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu dao | service | test service | test menuitem" />
+    <MESSAGE value="commit for fork" />
+    <MESSAGE value="carries code integrated, debugged, gui operational" />
+    <option name="LAST_COMMIT_MESSAGE" value="carries code integrated, debugged, gui operational" />
   </component>
 </project>

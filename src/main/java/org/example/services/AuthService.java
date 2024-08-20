@@ -21,4 +21,8 @@ public class AuthService {
     public String getRole(String username) {
         return loginSystem.getUserRole(username).toString();
     }
+
+    public boolean userExists(String username) {
+        return loginSystem.userExists(username);
+    }
 }

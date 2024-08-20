@@ -3,9 +3,9 @@ package org.example.models;
 public class User {
     private String username;
     private String passwordHash;    // Store the hashed password
-    private String role;        //"Manager" or "staff"
+    private Role role;        //"Manager" or "staff"
 
-    public User(String username, String passwordHash, String role) {
+    public User(String username, String passwordHash, Role role) {
         this.username = username;
         this.passwordHash = passwordHash;
         this.role = role;
@@ -20,7 +20,7 @@ public class User {
         return passwordHash;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 }
