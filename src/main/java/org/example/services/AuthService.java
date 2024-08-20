@@ -1,27 +1,24 @@
 package org.example.services;
 
-import org.example.models.User;
-import org.example.utils.HashUtils;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.example.LoginSystem;
+import org.example.models.Role;
 
 public class AuthService {
-    private Map<String, User> userDatabase = new HashMap<>(); // Simulated Database
+    private final LoginSystem loginSystem;
 
-    //Method to register new user
-    public void registerUser(String username, String Password, String Role) {
-        String HashedPassword = HashUtils.hashPassword(Password);
-        userDatabase.put(username, new User(username, HashedPassword, Role));
+    public AuthService() {
+        loginSystem = new LoginSystem();
     }
 
-    //Method to authenticate User
-    public User loginUser(String username, String password) {
-        User user = userDatabase.get(username);
-        if (user != null && HashUtils.verifyPassword(password, user.getPasswordHash())) {
+    public boolean login(String username, String password) {
+        return loginSystem.authenticate(username, password);
+    }
 
-            return user;        //Login successful
-        }
-        return null;    //login failed
+    public void register(String username, String password, Role role) {
+        loginSystem.addUser(username, password, role);
+    }
+
+    public String getRole(String username) {
+        return loginSystem.getUserRole(username).toString();
     }
 }
