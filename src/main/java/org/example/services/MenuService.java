@@ -14,12 +14,14 @@ public class MenuService {
     }
 
     // Method to add a new menu item
+
     public boolean addMenuItem(MenuItem menuItem) {
         if (menuItem == null || menuItem.getName() == null || menuItem.getName().isEmpty()) {
             throw new IllegalArgumentException("Menu item and its name must not be null or empty.");
         }
         // Additional business logic can be added here if needed
         return menuItemDAO.addMenuItem(menuItem);
+
     }
 
     // Method to get all menu items
