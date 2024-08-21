@@ -30,6 +30,7 @@ public class TableController {
     public void initialize() {
         // Load all tables into the ListView on initialization
         loadTableData();
+
     }
 
     // Method to load all tables into the ListView
