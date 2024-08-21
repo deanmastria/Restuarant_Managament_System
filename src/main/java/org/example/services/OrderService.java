@@ -1,29 +1,21 @@
 package org.example.services;
 
-import org.example.dao.InventoryDAO;
 import org.example.dao.OrderDAO;
 import org.example.models.Order;
-import org.example.models.OrderItem;
+
 import java.util.List;
 
 public class OrderService {
-    private OrderDAO orderDAO = new OrderDAO();
-    private InventoryService inventoryService = new InventoryService();
+    private final OrderDAO orderDAO = new OrderDAO();
 
-    // Method to process a new order
-    public int processOrder(Order order) {
-        // Insert the order into the database
+    // Method to create and process a new order
+    public Order createOrder(Order order) {
         int orderId = orderDAO.insertOrder(order);
-
-        // Update the inventory based on the items in the order
-        for (OrderItem item : order.getItems()) {
-            inventoryService.updateInventoryAfterOrder(item.getItemName(), item.getQuantity());
+        if (orderId != -1) {
+            order.setId(orderId);
+            return order;
         }
-
-        // Update order status to 'Preparing'
-        orderDAO.updateOrderStatus(orderId, "Preparing");
-
-        return orderId;
+        return null;
     }
 
     // Method to update the status of an order
@@ -31,8 +23,14 @@ public class OrderService {
         orderDAO.updateOrderStatus(orderId, newStatus);
     }
 
+    // Method to delete an order
+    public boolean deleteOrder(Order order) {
+        return orderDAO.deleteOrder(order.getId());
+    }
+
     // Method to get all orders
     public List<Order> getAllOrders() {
         return orderDAO.getAllOrders();
     }
 }
+

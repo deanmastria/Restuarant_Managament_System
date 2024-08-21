@@ -3,30 +3,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.controllers.ReportController"
-            prefHeight="400.0" prefWidth="600.0">
-    <children>
-        <VBox spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-            <Label text="Report Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controllers.ReportController"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;">
 
-            <!-- Date Picker to filter reports by date -->
-            <Label text="Select Date:"/>
-            <DatePicker fx:id="reportDatePicker"/>
+    <!-- Title -->
+    <Label text="Sales Report" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
 
-            <!-- TableView to display reports -->
-            <TableView fx:id="reportTableView" prefHeight="250.0" prefWidth="580.0">
-                <columns>
-                    <TableColumn fx:id="reportDateColumn" text="Date" prefWidth="150.0"/>
-                    <TableColumn fx:id="totalRevenueColumn" text="Total Revenue" prefWidth="150.0"/>
-                    <TableColumn fx:id="mostPopularItemColumn" text="Most Popular Item" prefWidth="150.0"/>
-                </columns>
-            </TableView>
+    <!-- Date Picker for selecting the date of the report -->
+    <HBox spacing="10">
+        <Label text="Select Date:" />
+        <DatePicker fx:id="datePicker" />
+        <Button text="Generate Report"/>
+    </HBox>
 
-            <!-- Buttons for generating/exporting reports -->
-            <Button text="Generate Report" onMouseClicked="#handleGenerateReport"/>
-            <Button text="Export Report" onMouseClicked="#handleExportReport"/>
-        </VBox>
-    </children>
-</AnchorPane>
+    <!-- Table to display the report data -->
+    <TableView fx:id="reportTableView">
+        <columns>
+            <TableColumn text="Item" fx:id="itemColumn"/>
+            <TableColumn text="Quantity Sold" fx:id="quantityColumn"/>
+            <TableColumn text="Revenue" fx:id="revenueColumn"/>
+        </columns>
+    </TableView>
+
+    <!-- Export button -->
+    <Button text="Export Report"/>
+
+</VBox>

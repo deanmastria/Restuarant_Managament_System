@@ -2,8 +2,8 @@ package org.example.dao;
 
 import org.example.models.Order;
 import org.example.models.OrderItem;
-
 import org.example.utils.DatabaseConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -77,6 +77,20 @@ public class OrderDAO {
         return orders;
     }
 
+    // Method to delete an order by ID
+    public boolean deleteOrder(int orderId) {
+        String sql = "DELETE FROM Orders WHERE id = ?";
+        try (Connection conn = DatabaseConnection.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, orderId);
+            return pstmt.executeUpdate() > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     // Utility methods for serializing and deserializing order items
     public String serializeOrderItems(List<OrderItem> items) {
         StringBuilder sb = new StringBuilder();
@@ -98,3 +112,5 @@ public class OrderDAO {
         return items;
     }
 }
+
+
