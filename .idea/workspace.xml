@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="commit to pull table changes">
+    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="changes to login, gui, order/serive/dao table/service/dao... fxml files(report.fxml)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/TableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/TableDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/TableDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/TableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/TableService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +188,7 @@
       <updated>1724093477401</updated>
       <workItem from="1724093478628" duration="6301000" />
       <workItem from="1724156821326" duration="21475000" />
-      <workItem from="1724246537707" duration="4561000" />
+      <workItem from="1724246537707" duration="5773000" />
     </task>
     <task id="LOCAL-00001" summary="database created. test code to start">
       <option name="closed" value="true" />
@@ -272,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724184063408</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changes to login, gui, order/serive/dao table/service/dao... fxml files(report.fxml)">
+      <option name="closed" value="true" />
+      <created>1724251509453</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1724251509453</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +296,7 @@
     <MESSAGE value="update before major changes" />
     <MESSAGE value="most up to date" />
     <MESSAGE value="commit to pull table changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit to pull table changes" />
+    <MESSAGE value="changes to login, gui, order/serive/dao table/service/dao... fxml files(report.fxml)" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes to login, gui, order/serive/dao table/service/dao... fxml files(report.fxml)" />
   </component>
 </project>
