@@ -16,11 +16,6 @@
     <Button text="Login" onAction="#handleLoginAction"/>
     <Label fx:id="loginStatusLabel"/>
 
-    <Button fx:id="menuButton" text="Menu" onAction="#handleMenuButtonAction" disable="true" />
-    <Button fx:id="orderButton" text="Order" onAction="#handleOrderButtonAction" disable="true" />
-    <Button fx:id="tableButton" text="Table" onAction="#handleTableButtonAction" disable="true" />
-    <Button fx:id="inventoryButton" text="Inventory" onAction="#handleInventoryButtonAction" disable="true" />
-    <Button fx:id="reportButton" text="Report" onAction="#handleReportButtonAction" disable="true" />
 
 </VBox>
 

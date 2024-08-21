@@ -5,9 +5,14 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import org.example.models.MenuItem;
 import org.example.services.MenuService;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,6 +35,15 @@ public class MenuController {
 
     @FXML
     private ListView<MenuItem> menuListView;
+
+    @FXML
+    private Button menuButton;
+
+    @FXML
+    private Button orderButton;
+
+    @FXML
+    private Button tableButton;
 
     private final MenuService menuService = new MenuService();
     private ObservableList<MenuItem> menuItems;
@@ -112,6 +126,35 @@ public class MenuController {
         }
     }
 
+    // Navigation to Menu Management
+    @FXML
+    public void navigateToMenuManagement() {
+        navigateToScene("/fxml/menu.fxml");
+    }
+
+    // Navigation to Order Management
+    @FXML
+    public void navigateToOrderManagement() {
+        navigateToScene("/fxml/order.fxml");
+    }
+
+    // Navigation to Table Management
+    @FXML
+    public void navigateToTableManagement() {
+        navigateToScene("/fxml/table.fxml");
+    }
+
+    private void navigateToScene(String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage) menuButton.getScene().getWindow();  // Get the current stage
+            stage.setScene(new Scene(root));  // Set the new scene
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Navigation Error", "Failed to load the requested screen.");
+        }
+    }
+
     private void clearFields() {
         nameField.clear();
         descriptionField.clear();
@@ -153,3 +196,4 @@ public class MenuController {
         return true;
     }
 }
+

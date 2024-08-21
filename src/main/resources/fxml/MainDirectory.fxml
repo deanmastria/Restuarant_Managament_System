@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controllers.MainDirectoryController"
+      prefHeight="400.0" prefWidth="600.0" spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+    <children>
+        <Label text="Main Directory" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <!-- Navigation Buttons -->
+        <Button fx:id="menuButton" text="Menu Management" onAction="#navigateToMenuManagement"/>
+        <Button fx:id="orderButton" text="Order Management" onAction="#navigateToOrderManagement"/>
+        <Button fx:id="tableButton" text="Table Management" onAction="#navigateToTableManagement"/>
+        <Button fx:id="inventoryButton" text="Inventory Management" onAction="#navigateToInventoryManagement"/>
+        <Button fx:id="reportButton" text="Report Management" onAction="#navigateToReportManagement"/>
+    </children>
+</VBox>

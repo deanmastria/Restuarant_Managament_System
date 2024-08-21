@@ -1,5 +1,7 @@
 package org.example.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Order {
@@ -10,11 +12,18 @@ public class Order {
     private String status;
     private int tableId;  // Add this field to hold the assigned table ID
 
-    // Constructors, getters, and setters
-
+    // Constructor with List<OrderItem>
     public Order(int userId, List<OrderItem> items, double totalPrice, String status) {
         this.userId = userId;
         this.items = items;
+        this.totalPrice = totalPrice;
+        this.status = status;
+    }
+
+    // Constructor with varargs (optional)
+    public Order(int userId, double totalPrice, String status, OrderItem... items) {
+        this.userId = userId;
+        this.items = new ArrayList<>(Arrays.asList(items)); // Convert varargs to a list
         this.totalPrice = totalPrice;
         this.status = status;
     }

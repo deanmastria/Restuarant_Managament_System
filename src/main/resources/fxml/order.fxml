@@ -18,10 +18,15 @@
             <Label text="Select Status:"/>
             <ComboBox fx:id="statusComboBox" promptText="Select Status" prefWidth="200.0"/>
 
+            <!-- Table ComboBox for assigning tables -->
+            <Label text="Assign Table:"/>
+            <ComboBox fx:id="tableComboBox" promptText="Select Table" prefWidth="200.0"/>
+
             <!-- Buttons for actions -->
-            <Button text="Update Status" onMouseClicked="#handleUpdateOrderStatus"/>
-            <Button text="Delete Order" onMouseClicked="#handleDeleteOrder"/>
+            <Button fx:id="createOrderButton" text="Create Order" onMouseClicked="#handleCreateOrder"/>
+            <Button fx:id="updateStatusButton" text="Update Status" onMouseClicked="#handleUpdateOrderStatus"/>
+            <Button fx:id="deleteOrderButton" text="Delete Order" onMouseClicked="#handleDeleteOrder"/>
+            <Button fx:id="assignTableButton" text="Assign Table" onMouseClicked="#handleAssignOrderToTable"/>
         </VBox>
     </children>
 </AnchorPane>
-

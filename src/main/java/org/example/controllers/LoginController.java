@@ -22,21 +22,6 @@ public class LoginController {
     private PasswordField passwordField;
 
     @FXML
-    private Button menuButton;
-
-    @FXML
-    private Button orderButton;
-
-    @FXML
-    private Button tableButton;
-
-    @FXML
-    private Button inventoryButton;
-
-    @FXML
-    private Button reportButton;
-
-    @FXML
     private Label loginStatusLabel;
 
     private AuthService authService;
@@ -62,9 +47,7 @@ public class LoginController {
             Role userRole = authService.getRole(username);  // Get the Role enum directly
 
             if (userRole != null) {
-                loginStatusLabel.setText("Login successful! Role: " + userRole);
-                configurePermissions(userRole);  // Configure permissions based on the user's role
-                // Buttons will be enabled based on the user's role, no automatic navigation
+                navigateToMainDirectory();  // Navigate to the Main Directory after successful login
             } else {
                 loginStatusLabel.setText("Error: Role not found for user.");
             }
@@ -73,61 +56,17 @@ public class LoginController {
         }
     }
 
-    private void configurePermissions(Role role) {
-        if (role == Role.STAFF) {
-            // Staff permissions - enable buttons
-            menuButton.setDisable(false);
-            orderButton.setDisable(false);
-            tableButton.setDisable(false);
-            inventoryButton.setDisable(true);  // Restricted for staff
-            reportButton.setDisable(true);     // Restricted for staff
-        } else if (role == Role.MANAGER) {
-            // Manager permissions - enable buttons
-            menuButton.setDisable(false);
-            orderButton.setDisable(false);
-            tableButton.setDisable(false);
-            inventoryButton.setDisable(false); // Accessible for managers
-            reportButton.setDisable(false);    // Accessible for managers
-        }
-    }
-
-    @FXML
-    public void handleMenuButtonAction() {
-        navigateToPage("menu.fxml", "Menu Management");
-    }
-
-    @FXML
-    public void handleOrderButtonAction() {
-        navigateToPage("order.fxml", "Order Management");
-    }
-
-    @FXML
-    public void handleTableButtonAction() {
-        navigateToPage("table.fxml", "Table Management");
-    }
-
-    @FXML
-    public void handleInventoryButtonAction() {
-        navigateToPage("inventory.fxml", "Table Management");
-    }
-
-    @FXML
-    public void handleReportButtonAction() {
-        navigateToPage("report.fxml", "Table Management");
-    }
-
-    // Navigate to a new page based on the FXML file and title
-    private void navigateToPage(String fxmlFile, String title) {
+    private void navigateToMainDirectory() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFile));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainDirectory.fxml"));
             Stage stage = (Stage) usernameField.getScene().getWindow(); // Get the current stage
             Scene scene = new Scene(loader.load()); // Load the new scene
             stage.setScene(scene);  // Set the new scene on the current stage
-            stage.setTitle(title);  // Set the title for the new scene
+            stage.setTitle("Main Directory");  // Set the title for the new scene
             stage.show();  // Show the stage with the new scene
         } catch (IOException e) {
             e.printStackTrace();
-            loginStatusLabel.setText("Error loading page: " + fxmlFile);
+            loginStatusLabel.setText("Error loading Main Directory.");
         }
     }
 
@@ -136,6 +75,7 @@ public class LoginController {
         authService = null;  // If additional cleanup is necessary
     }
 }
+
 
 
 

@@ -40,21 +40,31 @@ public class OrderController {
     @FXML
     public void initialize() {
         // Populate the order list
-        List<Order> orders = orderService.getAllOrders();
-        orderListView.getItems().addAll(orders);
+        loadOrders();
 
         // Populate the status combo box
-        statusComboBox.getItems().addAll("Waiting", "Preparing", "Ready");
+        statusComboBox.getItems().addAll("Waiting", "Preparing", "Ready", "Completed");
 
         // Populate the table combo box
-        List<Table> tables = tableService.getAvailableTables();
-        tableComboBox.getItems().addAll(tables);
+        loadAvailableTables();
 
         // Add event listeners to the buttons
         createOrderButton.setOnMouseClicked(event -> handleCreateOrder());
         updateStatusButton.setOnMouseClicked(event -> handleUpdateOrderStatus());
         deleteOrderButton.setOnMouseClicked(event -> handleDeleteOrder());
         assignTableButton.setOnMouseClicked(event -> handleAssignOrderToTable());
+    }
+
+    private void loadOrders() {
+        List<Order> orders = orderService.getAllOrders();
+        orderListView.getItems().clear();
+        orderListView.getItems().addAll(orders);
+    }
+
+    private void loadAvailableTables() {
+        List<Table> tables = tableService.getAvailableTables();
+        tableComboBox.getItems().clear();
+        tableComboBox.getItems().addAll(tables);
     }
 
     @FXML
@@ -85,6 +95,7 @@ public class OrderController {
         // Update the UI if the order was successfully created
         if (createdOrder != null) {
             orderListView.getItems().add(createdOrder); // Add the new order to the ListView
+            showAlert("Order created successfully.");
         } else {
             showAlert("Failed to create order.");
         }
@@ -99,6 +110,7 @@ public class OrderController {
             selectedOrder.setStatus(selectedStatus);
             orderService.updateOrderStatus(selectedOrder.getId(), selectedStatus); // Pass the correct parameters
             orderListView.refresh(); // Refresh the list view to reflect the updated status
+            showAlert("Order status updated successfully.");
         } else {
             showAlert("Please select an order and status.");
         }
@@ -110,6 +122,7 @@ public class OrderController {
         if (selectedOrder != null) {
             orderService.deleteOrder(selectedOrder);
             orderListView.getItems().remove(selectedOrder); // Remove from the list view
+            showAlert("Order deleted successfully.");
         } else {
             showAlert("Please select an order to delete.");
         }

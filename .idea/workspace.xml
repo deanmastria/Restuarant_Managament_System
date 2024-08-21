@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="push for consistency">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/MainDirectoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/DataSeeder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/TableCreation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainDirectory.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/TableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/ReportDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ReportDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant.db" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/order.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/OrderServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -84,9 +93,9 @@
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
-      <module name="RestaurantManagementSystem" />
+      <module name="Restuarant_Managament_System" />
       <option name="PROGRAM_PARAMETERS" value="--module-path /path/to/javafx-sdk/lib --add-modules=javafx.controls,javafx.fxml" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\User\.m2\repository\org\openjfx\javafx-controls\19.0.2;C:\Users\User\.m2\repository\org\openjfx\javafx-fxml\19.0.2;C:\Users\User\.m2\repository\org\openjfx\javafx-base\19.0.2;C:\Users\User\.m2\repository\org\openjfx\javafx-graphics\19.0.2 --add-modules javafx.controls,javafx.fxml " />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\deanm\.m2\repository\org\openjfx\javafx-controls\19.0.2;C:\Users\deanm\.m2\repository\org\openjfx\javafx-fxml\19.0.2;C:\Users\deanm\.m2\repository\org\openjfx\javafx-base\19.0.2;C:\Users\deanm\.m2\repository\org\openjfx\javafx-graphics\19.0.2 --add-modules javafx.controls,javafx.fxml " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />

@@ -6,7 +6,7 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.example.controllers.MenuController"
-      prefHeight="400.0" prefWidth="600.0">
+      prefHeight="400.0" prefWidth="600.0" spacing="10" alignment="CENTER" style="-fx-padding: 20;">
     <children>
         <Label text="Menu Management"/>
         <TextField fx:id="nameField" promptText="Item Name"/>
@@ -18,5 +18,13 @@
         <Button text="Update Item" onMouseClicked="#handleUpdateMenuItem"/>
         <Button text="Delete Item" onMouseClicked="#handleDeleteMenuItem"/>
         <ListView fx:id="menuListView" onMouseClicked="#handleMenuItemSelection"/>
+
+        <!-- Navigation Buttons -->
+        <HBox spacing="10">
+<!--            <Button fx:id="MainDirectory" text="Main Menu" onAction="#navigateToMainDirectory"/>-->
+            <Button fx:id="menuButton" text="Menu Management" onAction="#navigateToMenuManagement"/>
+            <Button fx:id="orderButton" text="Order Management" onAction="#navigateToOrderManagement"/>
+            <Button fx:id="tableButton" text="Table Management" onAction="#navigateToTableManagement"/>
+        </HBox>
     </children>
 </VBox>
