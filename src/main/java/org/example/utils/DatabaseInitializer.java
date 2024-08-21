@@ -68,7 +68,8 @@ public class DatabaseInitializer {
             System.out.println("Sales table created successfully.");
 
             // Seed Tables and Inventory data if not already seeded
-            if (!isTableDataSeeded(conn, "Tables")) {
+            if (!
+                    isTableDataSeeded(conn, "Tables")) {
                 seedTablesData(conn);
             }
             if (!isTableDataSeeded(conn, "Inventory")) {

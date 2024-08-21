@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="menu dao | service | test service | test menuitem">
+    <list default="true" id="acf262ac-38eb-4e1a-95c7-96bd379a32c7" name="Changes" comment="push for consistency">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/TableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/ReportDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ReportDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/DatabaseInitializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +51,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;Application.App.executor&quot;: &quot;Run&quot;,
     &quot;Application.TestDatabase.executor&quot;: &quot;Run&quot;,
     &quot;Application.TestMenuItemDAO.executor&quot;: &quot;Run&quot;,
@@ -186,7 +192,8 @@
       <workItem from="1724093478628" duration="6301000" />
       <workItem from="1724164378800" duration="6239000" />
       <workItem from="1724156821326" duration="18861000" />
-      <workItem from="1724183518856" duration="425000" />
+      <workItem from="1724183518856" duration="2068000" />
+      <workItem from="1724242107520" duration="8285000" />
     </task>
     <task id="LOCAL-00001" summary="database created. test code to start">
       <option name="closed" value="true" />
@@ -236,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724177882075</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="push for consistency">
+      <option name="closed" value="true" />
+      <created>1724183968645</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1724183968645</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +275,7 @@
     <MESSAGE value="commit for fork" />
     <MESSAGE value="carries code integrated, debugged, gui operational" />
     <MESSAGE value="update before major changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="update before major changes" />
+    <MESSAGE value="push for consistency" />
+    <option name="LAST_COMMIT_MESSAGE" value="push for consistency" />
   </component>
 </project>

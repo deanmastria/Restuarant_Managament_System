@@ -10,6 +10,7 @@ public class TableController {
 
     public TableController() {
         this.tableService = new TableService();
+
     }
 
     // Method to seat a party based on user input
