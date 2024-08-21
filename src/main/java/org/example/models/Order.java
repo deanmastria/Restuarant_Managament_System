@@ -1,24 +1,24 @@
 package org.example.models;
 
-
 import java.util.List;
 
 public class Order {
     private int id;
-    private int userId;  // Assuming you link orders to users
-    private List<MenuItem> items;
+    private int userId;
+    private List<OrderItem> items;
     private double totalPrice;
-    private String status;  // Possible values: "waiting", "preparing", "ready"
+    private String status;
+    private int tableId;  // Add this field to hold the assigned table ID
 
-    public Order(int id, int userId, List<MenuItem> items, double totalPrice, String status) {
-        this.id = id;
+    // Constructors, getters, and setters
+
+    public Order(int userId, List<OrderItem> items, double totalPrice, String status) {
         this.userId = userId;
         this.items = items;
         this.totalPrice = totalPrice;
         this.status = status;
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -31,24 +31,12 @@ public class Order {
         return userId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public List<MenuItem> getItems() {
+    public List<OrderItem> getItems() {
         return items;
-    }
-
-    public void setItems(List<MenuItem> items) {
-        this.items = items;
     }
 
     public double getTotalPrice() {
         return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     public String getStatus() {
@@ -59,14 +47,12 @@ public class Order {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", items=" + items +
-                ", totalPrice=" + totalPrice +
-                ", status='" + status + '\'' +
-                '}';
+    public int getTableId() {
+        return tableId;
+    }
+
+    // Set the table for this order
+    public void setTable(int tableId) {
+        this.tableId = tableId;
     }
 }

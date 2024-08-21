@@ -62,9 +62,12 @@
     &quot;JUnit.MenuServiceTest.testAddMenuItem.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.OrderServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.OrderServiceTest.testUpdateOrderStatus.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.RestaurantManagementSystem [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RestaurantManagementSystem [compile].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/deanm/IdeaProjects/Project_IO&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -176,8 +179,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19072.14" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19072.14" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -243,15 +246,39 @@
       <option name="project" value="LOCAL" />
       <updated>1724177882075</updated>
     </task>
-    <task id="LOCAL-00007" summary="push for consistency">
+    <task id="LOCAL-00007" summary="most up to date">
       <option name="closed" value="true" />
-      <created>1724183968645</created>
+      <created>1724181445579</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1724183968645</updated>
+      <updated>1724181445580</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="most up to date">
+      <option name="closed" value="true" />
+      <created>1724184025918</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724184025918</updated>
+    </task>
+    <task id="LOCAL-00009" summary="commit to pull table changes">
+      <option name="closed" value="true" />
+      <created>1724184063408</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724184063408</updated>
+    </task>
+    <task id="LOCAL-00010" summary="changes to login, gui, order/serive/dao table/service/dao... fxml files(report.fxml)">
+      <option name="closed" value="true" />
+      <created>1724251509453</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1724251509453</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +302,9 @@
     <MESSAGE value="commit for fork" />
     <MESSAGE value="carries code integrated, debugged, gui operational" />
     <MESSAGE value="update before major changes" />
-    <MESSAGE value="push for consistency" />
-    <option name="LAST_COMMIT_MESSAGE" value="push for consistency" />
+    <MESSAGE value="most up to date" />
+    <MESSAGE value="commit to pull table changes" />
+    <MESSAGE value="changes to login, gui, order/serive/dao table/service/dao... fxml files(report.fxml)" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes to login, gui, order/serive/dao table/service/dao... fxml files(report.fxml)" />
   </component>
 </project>

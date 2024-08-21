@@ -2,14 +2,13 @@ package org.example.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.example.models.Order;
-import org.example.models.MenuItem;
+import org.example.models.Table;
+import org.example.models.OrderItem;
 import org.example.services.OrderService;
-import org.example.services.MenuService;
+import org.example.services.TableService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderController {
@@ -20,50 +19,119 @@ public class OrderController {
     @FXML
     private ComboBox<String> statusComboBox;
 
+    @FXML
+    private ComboBox<Table> tableComboBox;
+
+    @FXML
+    private Button createOrderButton;
+
+    @FXML
+    private Button updateStatusButton;
+
+    @FXML
+    private Button deleteOrderButton;
+
+    @FXML
+    private Button assignTableButton;
+
     private final OrderService orderService = new OrderService();
-    private final MenuService menuService = new MenuService();
-    private ObservableList<Order> orders;
+    private final TableService tableService = new TableService();
 
     @FXML
     public void initialize() {
-        loadOrders();
-        statusComboBox.setItems(FXCollections.observableArrayList("waiting", "preparing", "ready"));
-    }
+        // Populate the order list
+        List<Order> orders = orderService.getAllOrders();
+        orderListView.getItems().addAll(orders);
 
-    private void loadOrders() {
-        List<Order> orderList = orderService.getAllOrders();
-        orders = FXCollections.observableArrayList(orderList);
-        orderListView.setItems(orders);
+        // Populate the status combo box
+        statusComboBox.getItems().addAll("Waiting", "Preparing", "Ready");
+
+        // Populate the table combo box
+        List<Table> tables = tableService.getAvailableTables();
+        tableComboBox.getItems().addAll(tables);
+
+        // Add event listeners to the buttons
+        createOrderButton.setOnMouseClicked(event -> handleCreateOrder());
+        updateStatusButton.setOnMouseClicked(event -> handleUpdateOrderStatus());
+        deleteOrderButton.setOnMouseClicked(event -> handleDeleteOrder());
+        assignTableButton.setOnMouseClicked(event -> handleAssignOrderToTable());
     }
 
     @FXML
-    public void handleUpdateOrderStatus(MouseEvent event) {
-        Order selectedOrder = orderListView.getSelectionModel().getSelectedItem();
-        String status = statusComboBox.getValue();
+    public void handleCreateOrder() {
+        // Example user ID (this should come from your user session or input)
+        int userId = 1;
 
-        if (selectedOrder != null && status != null) {
-            orderService.updateOrderStatus(selectedOrder.getId(), status);
-            loadOrders();  // Reload the orders to reflect the updated status
+        // Example list of order items
+        List<OrderItem> items = new ArrayList<>();
+        items.add(new OrderItem("Burger", 2));  // 2 Burgers
+        items.add(new OrderItem("Fries", 1));   // 1 Fries
+
+        // Calculate the total price based on the items
+        double totalPrice = 0;
+        for (OrderItem item : items) {
+            totalPrice += item.getPrice() * item.getQuantity();
+        }
+
+        // Set the initial status of the order
+        String initialStatus = "Waiting";
+
+        // Create the Order object
+        Order newOrder = new Order(userId, items, totalPrice, initialStatus);
+
+        // Persist the order using the OrderService
+        Order createdOrder = orderService.createOrder(newOrder);
+
+        // Update the UI if the order was successfully created
+        if (createdOrder != null) {
+            orderListView.getItems().add(createdOrder); // Add the new order to the ListView
         } else {
-            showAlert("No order or status selected", "Please select an order and a status.");
+            showAlert("Failed to create order.");
         }
     }
 
     @FXML
-    public void handleDeleteOrder(MouseEvent event) {
+    public void handleUpdateOrderStatus() {
         Order selectedOrder = orderListView.getSelectionModel().getSelectedItem();
+        String selectedStatus = statusComboBox.getValue();
 
+        if (selectedOrder != null && selectedStatus != null) {
+            selectedOrder.setStatus(selectedStatus);
+            orderService.updateOrderStatus(selectedOrder.getId(), selectedStatus); // Pass the correct parameters
+            orderListView.refresh(); // Refresh the list view to reflect the updated status
+        } else {
+            showAlert("Please select an order and status.");
+        }
+    }
+
+    @FXML
+    public void handleDeleteOrder() {
+        Order selectedOrder = orderListView.getSelectionModel().getSelectedItem();
         if (selectedOrder != null) {
-            orderService.deleteOrder(selectedOrder.getId());
-            orders.remove(selectedOrder);
+            orderService.deleteOrder(selectedOrder);
+            orderListView.getItems().remove(selectedOrder); // Remove from the list view
         } else {
-            showAlert("No order selected", "Please select an order to delete.");
+            showAlert("Please select an order to delete.");
         }
     }
 
-    private void showAlert(String title, String message) {
+    @FXML
+    public void handleAssignOrderToTable() {
+        Order selectedOrder = orderListView.getSelectionModel().getSelectedItem();
+        Table selectedTable = tableComboBox.getValue();
+
+        if (selectedOrder != null && selectedTable != null) {
+            selectedOrder.setTable(selectedTable.getId()); // Set the table ID, not the Table object
+            tableService.assignTableToOrder(selectedTable.getId(), selectedOrder); // Pass the table ID
+            showAlert("Order assigned to table successfully.");
+        } else {
+            showAlert("Please select an order and a table.");
+        }
+    }
+
+    private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
+        alert.setTitle("Information");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();

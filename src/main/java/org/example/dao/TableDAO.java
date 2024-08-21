@@ -54,5 +54,55 @@ public class TableDAO {
             return false;
         }
     }
+
+    // Get a specific table by ID
+    public Table getTableById(int tableId) {
+        String sql = "SELECT * FROM Tables WHERE id = ?";
+        Table table = null;
+
+        try (Connection conn = DatabaseConnection.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, tableId);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                table = new Table(
+                        rs.getInt("id"),
+                        rs.getInt("size"),
+                        rs.getString("status")
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return table;
+    }
+
+    // Get all tables
+    public List<Table> getAllTables() {
+        List<Table> tables = new ArrayList<>();
+        String sql = "SELECT * FROM Tables";
+
+        try (Connection conn = DatabaseConnection.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                Table table = new Table(
+                        rs.getInt("id"),
+                        rs.getInt("size"),
+                        rs.getString("status")
+                );
+                tables.add(table);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return tables;
+    }
 }
+
 
